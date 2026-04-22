@@ -25,6 +25,6 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: YOUR_APP_NAME
+          app-name: petclinic-app1
           publish-profile: ${{ secrets.AZURE_WEBAPP }}
           package: target/*.jar
