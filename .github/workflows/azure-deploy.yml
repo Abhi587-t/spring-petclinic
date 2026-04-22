@@ -1,4 +1,4 @@
-name: Build and Test
+name: Deploy to Azure App Service
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,6 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: petclinic-app1
+          app-name: YOUR_APP_NAME
           publish-profile: ${{ secrets.AZURE_WEBAPP }}
           package: target/*.jar
